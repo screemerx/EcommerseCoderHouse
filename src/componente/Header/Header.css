@@ -8,28 +8,5 @@
 
 .header__logo {
   width: 25vh;
-}
-
-.header__nav__ul {
-  display: flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-
-.header__carrito {
-  width: 40px;
-  height: 40px;
-}
-
-.header__nav__li {
-  font-size: 2rem;
-  display: flex;
-  padding: 0 10px;
-  list-style-type: none;
-  align-items: center;
-}
-
-.link__style {
-  text-decoration: none;
-  color: white;
+  padding-left: 20px;
 }
