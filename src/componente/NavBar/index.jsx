@@ -1,8 +1,8 @@
 import React from "react";
-import "./ItemList.css";
+import "./NavBar.css";
 import CartWidget from "../CartWidget/index";
 
-export const ItemList = () => {
+export const NavBar = () => {
   return (
     <div>
       <ul className="header__nav__ul">
@@ -29,4 +29,4 @@ export const ItemList = () => {
   );
 };
 
-export default ItemList;
+export default NavBar;

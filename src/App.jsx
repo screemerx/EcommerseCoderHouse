@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./componente/Header";
-import Title from "./componente/Title";
+
 import "./App.css";
+import ItemLisContainer from "./componente/CartWidget/ItemCount/ItemListContainer";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Title titles="Pokemonn" />
+      <ItemLisContainer texto="Pokemon" />
     </>
   );
 };

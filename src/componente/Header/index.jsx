@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { SiPokemon } from "react-icons/si";
-import ItemList from "../ItemList/index";
+import NavBar from "../NavBar/index";
 
 export const Header = () => {
   return (
@@ -11,7 +11,7 @@ export const Header = () => {
           <SiPokemon size="8rem" color="white" />{" "}
         </h1>
       </div>
-      <ItemList />
+      <NavBar />
     </div>
   );
 };
