@@ -1,20 +1,18 @@
-import "./Item.css";
 import React from "react";
-import ItemCount from "../ItemCount";
-import "../../ItemListContainer/index";
+import ItemCount from "../CartWidget/ItemCount";
 
 const onAdd = (quiantity) => {
   console.log(`compraste ${quiantity} unidades`);
 };
 
-const Item = ({ info }) => {
+export const ItemDetail = ({ data }) => {
   return (
     <div href="" className="pokemon">
-      <p> {info.name}</p>
-      <img src={info.image} />
+      <p> {data.name}</p>
+      <img src={data.image} />
       <ItemCount initial={1} stock={10} onAdd={onAdd} />
     </div>
   );
 };
 
-export default Item;
+export default ItemDetail;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Title from "../Title";
-import ItemCount from "../ItemCount";
+import Title from "../CartWidget/Title";
+
 import "./ItemListContainer.css";
-import ItemList from "../ItemList";
-import bulbasaur from "../../../Recursos/001.png";
-import charmander from "../../../Recursos/004.png";
-import squirtle from "../../../Recursos/007.png";
+import ItemList from "../CartWidget/ItemList";
+import bulbasaur from "../../Recursos/001.png";
+import charmander from "../../Recursos/004.png";
+import squirtle from "../../Recursos/007.png";
 
 const Pokemons = [
   { id: 1, image: bulbasaur, name: "Bulbasaur" },
@@ -26,15 +26,13 @@ export const ItemLisContainer = ({ texto }) => {
     getData.then((res) => setData(res));
   }, []);
 
-  const onAdd = (quiantity) => {
-    console.log(`compraste ${quiantity} unidades`);
-  };
-
   return (
     <>
       <Title className="h1" titles={texto} />
-      <ItemCount initial={1} stock={10} onAdd={onAdd} />
-      <ItemList data={data} />
+
+      <div className="container">
+        <ItemList data={data} />
+      </div>
     </>
   );
 };

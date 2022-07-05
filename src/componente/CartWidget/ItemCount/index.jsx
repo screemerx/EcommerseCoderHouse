@@ -17,7 +17,7 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
   }, [initial]);
 
   return (
-    <div className="counter">
+    <div className="button__cart">
       <button disabled={count <= 1} className="decrease" onClick={decrease}>
         -
       </button>
