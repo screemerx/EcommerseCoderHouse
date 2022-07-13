@@ -12,13 +12,12 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route
-            path="/detalle"
-            element={<ItemDetailContainer texto="Pokemons" />}
-          />
+          <Route path="/" element={<ItemListContainer texto="Pokemons" />} />
+
+          <Route path="/detalle/:detalleId" element={<ItemDetailContainer />} />
           <Route
             path="/categoria/:categoriaId"
-            element={<ItemListContainer texto="Pokemons" />}
+            element={<ItemListContainer />}
           />
 
           <Route path="/cart" element={<Cart />} />

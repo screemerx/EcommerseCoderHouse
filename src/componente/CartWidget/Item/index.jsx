@@ -1,18 +1,15 @@
 import "./Item.css";
 import React from "react";
-import ItemCount from "../ItemCount";
 import "../../ItemListContainer/index";
-
-const onAdd = (quiantity) => {
-  console.log(`compraste ${quiantity} unidades`);
-};
+import { Link } from "react-router-dom";
 
 const Item = ({ info }) => {
   return (
-    <div href="" className="pokemon">
-      <p> {info.name}</p>
-      <img src={info.image} />
-      <ItemCount initial={1} stock={10} onAdd={onAdd} />
+    <div>
+      <Link to={`/detalle/${info.id}`} className="pokemon">
+        <p> {info.name}</p>
+        <img src={info.image} />
+      </Link>
     </div>
   );
 };

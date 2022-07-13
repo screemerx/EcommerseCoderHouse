@@ -3,17 +3,27 @@ import ItemDetail from "../ItemDetail";
 import bulbasaur from "../../Recursos/001.png";
 import charmander from "../../Recursos/004.png";
 import squirtle from "../../Recursos/007.png";
+import velozball from "../../Recursos/velozball.png";
+import masterball from "../../Recursos/masterball.png";
+import pokeball from "../../Recursos/pokeball.png";
+import pokedex from "../../Recursos/pokedex.png";
 import Title from "../CartWidget/Title";
+import { useParams } from "react-router-dom";
 
 // const Pokemons = { id: 1, image: bulbasaur, name: "Bulbasaur" };
 const Pokemons = [
-  { id: 1, image: bulbasaur, name: "Bulbasaur" },
-  { id: 4, image: charmander, name: "Charmander" },
-  { id: 7, image: squirtle, name: "Squirtle" },
+  { id: 1, image: bulbasaur, name: "Bulbasaur", category: "pokemon" },
+  { id: 4, image: charmander, name: "Charmander", category: "pokemon" },
+  { id: 7, image: squirtle, name: "Squirtle", category: "pokemon" },
+  { id: 8, image: velozball, name: "Velozball", category: "pokeball" },
+  { id: 9, image: masterball, name: "Masterball", category: "pokeball" },
+  { id: 10, image: pokeball, name: "Pokeball", category: "pokeball" },
+  { id: 11, image: pokedex, name: "Pokedex", category: "pokedex" },
 ];
 
 export const ItemDetailContainer = ({ texto }) => {
   const [data, setData] = useState([]);
+  const { detalleId } = useParams();
 
   useEffect(() => {
     const getData = new Promise((resolve) => {
@@ -22,7 +32,9 @@ export const ItemDetailContainer = ({ texto }) => {
       });
     });
 
-    getData.then((res) => setData(res));
+    getData.then((res) =>
+      setData(res.find((pokemon) => pokemon.id === parseInt(detalleId)))
+    );
   }, []);
 
   return (

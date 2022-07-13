@@ -8,17 +8,17 @@ export const NavBar = () => {
     <div>
       <ul className="header__nav__ul">
         <li className=" header__nav__li">
-          <NavLink className="link__style" to="/categoria">
+          <NavLink className="link__style" to="/categoria/pokemon">
             Pokemons
           </NavLink>
         </li>
         <li className=" header__nav__li">
-          <NavLink className="link__style" to="/categoria">
+          <NavLink className="link__style" to="/categoria/pokeball">
             Pokeballs
           </NavLink>
         </li>
         <li className=" header__nav__li">
-          <NavLink className="link__style" to="/detalle">
+          <NavLink className="link__style" to="/">
             Objects
           </NavLink>
         </li>
