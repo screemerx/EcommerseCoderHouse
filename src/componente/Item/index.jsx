@@ -1,9 +1,12 @@
 import "./Item.css";
-import React from "react";
-import "../../ItemListContainer/index";
+import "../ItemDetailContainer/index";
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const Item = ({ info }) => {
+  const { nombre } = useContext(CartContext);
+  console.log("Item:", nombre);
   return (
     <div>
       <Link to={`/detalle/${info.id}`} className="pokemon">

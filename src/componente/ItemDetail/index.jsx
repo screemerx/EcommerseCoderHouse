@@ -1,12 +1,18 @@
-import React from "react";
-import ItemCount from "../CartWidget/ItemCount";
+import React, { useState } from "react";
+import ItemCount from "../ItemCount/index";
 import "./ItemDetail.css";
-
-const onAdd = (quiantity) => {
-  console.log(`compraste ${quiantity} unidades`);
-};
+import { useCartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = ({ data }) => {
+  const [goToCart, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
+
+  const onAdd = (quiantity) => {
+    setGoToCart(true);
+    addProduct(data, quiantity);
+  };
+
   return (
     <div>
       <div className="pokemon">

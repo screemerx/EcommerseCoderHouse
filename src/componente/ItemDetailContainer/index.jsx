@@ -7,7 +7,7 @@ import velozball from "../../Recursos/velozball.png";
 import masterball from "../../Recursos/masterball.png";
 import pokeball from "../../Recursos/pokeball.png";
 import pokedex from "../../Recursos/pokedex.png";
-import Title from "../CartWidget/Title";
+import Title from "../Title/index";
 import { useParams } from "react-router-dom";
 
 // const Pokemons = { id: 1, image: bulbasaur, name: "Bulbasaur" };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Title from "../CartWidget/Title";
+import Title from "../Title/index";
 import "./ItemListContainer.css";
-import ItemList from "../CartWidget/ItemList";
+import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
 
 import bulbasaur from "../../Recursos/001.png";
@@ -39,8 +39,6 @@ export const ItemLisContainer = ({ texto }) => {
       );
     } else {
       getData.then((res) => setData(res));
-      console.log(categoriaId);
-      console.log(getData);
     }
   }, [categoriaId]);
 
