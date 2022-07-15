@@ -12,13 +12,43 @@ import { useParams } from "react-router-dom";
 
 // const Pokemons = { id: 1, image: bulbasaur, name: "Bulbasaur" };
 const Pokemons = [
-  { id: 1, image: bulbasaur, name: "Bulbasaur", category: "pokemon" },
-  { id: 4, image: charmander, name: "Charmander", category: "pokemon" },
-  { id: 7, image: squirtle, name: "Squirtle", category: "pokemon" },
-  { id: 8, image: velozball, name: "Velozball", category: "pokeball" },
-  { id: 9, image: masterball, name: "Masterball", category: "pokeball" },
-  { id: 10, image: pokeball, name: "Pokeball", category: "pokeball" },
-  { id: 11, image: pokedex, name: "Pokedex", category: "pokedex" },
+  {
+    id: 1,
+    image: bulbasaur,
+    name: "Bulbasaur",
+    category: "pokemon",
+    price: 250,
+  },
+  {
+    id: 4,
+    image: charmander,
+    name: "Charmander",
+    category: "pokemon",
+    price: 250,
+  },
+  { id: 7, image: squirtle, name: "Squirtle", category: "pokemon", price: 250 },
+  {
+    id: 8,
+    image: velozball,
+    name: "Velozball",
+    category: "pokeball",
+    price: 250,
+  },
+  {
+    id: 9,
+    image: masterball,
+    name: "Masterball",
+    category: "pokeball",
+    price: 250,
+  },
+  {
+    id: 10,
+    image: pokeball,
+    name: "Pokeball",
+    category: "pokeball",
+    price: 250,
+  },
+  { id: 11, image: pokedex, name: "Pokedex", category: "pokedex", price: 250 },
 ];
 
 export const ItemDetailContainer = ({ texto }) => {

@@ -3,6 +3,7 @@ import Title from "../Title/index";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebase/firebase";
 
 import bulbasaur from "../../Recursos/001.png";
 import charmander from "../../Recursos/004.png";
@@ -11,6 +12,7 @@ import velozball from "../../Recursos/velozball.png";
 import masterball from "../../Recursos/masterball.png";
 import pokeball from "../../Recursos/pokeball.png";
 import pokedex from "../../Recursos/pokedex.png";
+import { getDocs, collection, query } from "firebase/firestore";
 
 const Pokemons = [
   { id: 1, image: bulbasaur, name: "Bulbasaur", category: "pokemon" },
@@ -28,6 +30,18 @@ export const ItemLisContainer = ({ texto }) => {
   const { categoriaId } = useParams();
 
   useEffect(() => {
+    // const productsCollection = collection(db, "pokemones");
+
+    // getDocs(productsCollection).then((result) => {
+    //   const lista = result.docs.map((product) => {
+    //     return {
+    //       id: product.id,
+    //       ...product.data(),
+    //     };
+    //   });
+    //   setData(lista);
+    // });
+
     const getData = new Promise((resolve) => {
       setTimeout(() => {
         resolve(Pokemons);
