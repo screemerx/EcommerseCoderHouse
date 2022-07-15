@@ -2,10 +2,10 @@ import { CgPokemon } from "react-icons/cg";
 import React, { useContext } from "react";
 import "./CartWidget.css";
 import { NavLink } from "react-router-dom";
-import { CartContext } from "../../../src/context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 
 export const CartWidget = () => {
-  const nombre = useContext(CartContext);
+  const nombre = useCartContext(useContext);
   console.log("CartWidget", nombre);
 
   return (
