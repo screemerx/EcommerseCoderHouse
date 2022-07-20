@@ -7,10 +7,12 @@ const Cart = () => {
   const { cart, totalPrice } = useCartContext();
 
   if (cart.length === 0) {
-    <>
-      <p>No Hay Elementos en el Carrito</p>
-      <Link to="/">Ver nuestros Productos</Link>
-    </>;
+    return (
+      <>
+        <p>No Hay Elementos en el Carrito</p>
+        <Link to="/">Ver nuestros Productos</Link>
+      </>
+    );
   }
   return (
     <>
