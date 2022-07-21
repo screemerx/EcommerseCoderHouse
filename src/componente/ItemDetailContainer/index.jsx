@@ -1,71 +1,25 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail";
-import bulbasaur from "../../Recursos/001.png";
-import charmander from "../../Recursos/004.png";
-import squirtle from "../../Recursos/007.png";
-import velozball from "../../Recursos/velozball.png";
-import masterball from "../../Recursos/masterball.png";
-import pokeball from "../../Recursos/pokeball.png";
-import pokedex from "../../Recursos/pokedex.png";
+// import bulbasaur from "../../Recursos/001.png";
+// import charmander from "../../Recursos/004.png";
+// import squirtle from "../../Recursos/007.png";
+// import velozball from "../../Recursos/velozball.png";
+// import masterball from "../../Recursos/masterball.png";
+// import pokeball from "../../Recursos/pokeball.png";
+// import pokedex from "../../Recursos/pokedex.png";
 import Title from "../Title/index";
 import { useParams } from "react-router-dom";
-
-// const Pokemons = { id: 1, image: bulbasaur, name: "Bulbasaur" };
-const Pokemons = [
-  {
-    id: 1,
-    image: bulbasaur,
-    name: "Bulbasaur",
-    category: "pokemon",
-    price: 500,
-  },
-  {
-    id: 4,
-    image: charmander,
-    name: "Charmander",
-    category: "pokemon",
-    price: 500,
-  },
-  { id: 7, image: squirtle, name: "Squirtle", category: "pokemon", price: 500 },
-  {
-    id: 8,
-    image: velozball,
-    name: "Velozball",
-    category: "pokeball",
-    price: 50,
-  },
-  {
-    id: 9,
-    image: masterball,
-    name: "Masterball",
-    category: "pokeball",
-    price: 50,
-  },
-  {
-    id: 10,
-    image: pokeball,
-    name: "Pokeball",
-    category: "pokeball",
-    price: 50,
-  },
-  { id: 11, image: pokedex, name: "Pokedex", category: "pokedex", price: 250 },
-];
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 export const ItemDetailContainer = ({ texto }) => {
   const [data, setData] = useState([]);
   const { detalleId } = useParams();
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(Pokemons);
-      });
-    });
-
-    getData.then((res) =>
-      setData(res.find((pokemon) => pokemon.id === parseInt(detalleId)))
-    );
-  }, []);
+    const querydb = getFirestore();
+    const queryDoc = doc(querydb, "pokemones", detalleId);
+    getDoc(queryDoc).then((res) => setData({ id: res.id, ...res.data() }));
+  }, [detalleId]);
 
   return (
     <>

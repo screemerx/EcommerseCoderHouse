@@ -4,55 +4,14 @@ import "./ItemListContainer.css";
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
-
-import bulbasaur from "../../Recursos/001.png";
-import charmander from "../../Recursos/004.png";
-import squirtle from "../../Recursos/007.png";
-import velozball from "../../Recursos/velozball.png";
-import masterball from "../../Recursos/masterball.png";
-import pokeball from "../../Recursos/pokeball.png";
-import pokedex from "../../Recursos/pokedex.png";
-import { getDocs, collection, query } from "firebase/firestore";
-
-const Pokemons = [
-  {
-    id: 1,
-    image: bulbasaur,
-    name: "Bulbasaur",
-    category: "pokemon",
-    price: 500,
-  },
-  {
-    id: 4,
-    image: charmander,
-    name: "Charmander",
-    category: "pokemon",
-    price: 500,
-  },
-  { id: 7, image: squirtle, name: "Squirtle", category: "pokemon", price: 500 },
-  {
-    id: 8,
-    image: velozball,
-    name: "Velozball",
-    category: "pokeball",
-    price: 50,
-  },
-  {
-    id: 9,
-    image: masterball,
-    name: "Masterball",
-    category: "pokeball",
-    price: 50,
-  },
-  {
-    id: 10,
-    image: pokeball,
-    name: "Pokeball",
-    category: "pokeball",
-    price: 50,
-  },
-  { id: 11, image: pokedex, name: "Pokedex", category: "pokedex", price: 250 },
-];
+import {
+  getDocs,
+  collection,
+  query,
+  where,
+  getFirestore,
+  Query,
+} from "firebase/firestore";
 
 export const ItemLisContainer = ({ texto }) => {
   const [data, setData] = useState([]);
@@ -60,29 +19,25 @@ export const ItemLisContainer = ({ texto }) => {
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    // const productsCollection = collection(db, "pokemones");
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "pokemones");
 
-    // getDocs(productsCollection).then((result) => {
-    //   const lista = result.docs.map((product) => {
-    //     return {
-    //       id: product.id,
-    //       ...product.data(),
-    //     };
-    //   });
-    //   setData(lista);
-    // });
-
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(Pokemons);
-      });
-    });
     if (categoriaId) {
-      getData.then((res) =>
-        setData(res.filter((pokemon) => pokemon.category === categoriaId))
+      const queryFilter = query(
+        queryCollection,
+        where("category", "==", categoriaId)
+      );
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
       );
     } else {
-      getData.then((res) => setData(res));
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
+      );
     }
   }, [categoriaId]);
 
