@@ -11,7 +11,7 @@ export const CartWidget = () => {
   return (
     <div className="cart1">
       <NavLink className="/cart" to="/cart">
-        <CgPokemon size="3rem" color="white" />
+        <CgPokemon size="3rem" color="#e7a76c" />
       </NavLink>
     </div>
   );

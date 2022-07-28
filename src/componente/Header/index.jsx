@@ -11,7 +11,7 @@ export const Header = () => {
         <h1 className="header__logo">
           <NavLink to="/">
             {" "}
-            <SiPokemon size="8rem" color="white" />{" "}
+            <SiPokemon size="8rem" color="#e7a76c" />{" "}
           </NavLink>
         </h1>
       </div>

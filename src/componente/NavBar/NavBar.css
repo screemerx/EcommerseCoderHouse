@@ -15,9 +15,10 @@
   padding: 0 10px;
   list-style-type: none;
   align-items: center;
+  font-style: italic;
 }
 
 .link__style {
   text-decoration: none;
-  color: white;
+  color: #e7a76c;
 }

@@ -12,6 +12,7 @@ import {
   getFirestore,
   Query,
 } from "firebase/firestore";
+import Inicio from "../../Inicio/index";
 
 export const ItemLisContainer = ({ texto }) => {
   const [data, setData] = useState([]);
@@ -42,13 +43,15 @@ export const ItemLisContainer = ({ texto }) => {
   }, [categoriaId]);
 
   return (
-    <>
-      <Title className="h1" titles={texto} />
-
-      <div className="container">
-        <ItemList data={data} />
+    <div>
+      <Inicio />
+      <div className="container__general">
+        <Title className="h1" titles={texto} />
+        <div className="container">
+          <ItemList data={data} />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const Item = ({ info }) => {
   const { nombre } = useCartContext(useContext);
   console.log("Item:", nombre);
   return (
-    <div>
+    <div className="recuadro">
       <Link to={`/detalle/${info.id}`} className="pokemon">
         <p> {info.name}</p>
         <img src={info.image} />
