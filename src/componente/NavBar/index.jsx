@@ -2,6 +2,10 @@ import React from "react";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/index";
 import { NavLink } from "react-router-dom";
+// import bullbasaur from "../../Recursos/bullbasaur.jpg";
+// import charizard from "../../Recursos/charizard.png";
+// import squirtle from "../../Recursos/squirtle.jpg";
+// import { useParams } from "react-router-dom";
 
 export const NavBar = () => {
   return (
@@ -18,7 +22,7 @@ export const NavBar = () => {
           </NavLink>
         </li>
         <li className=" header__nav__li">
-          <NavLink className="link__style" to="/">
+          <NavLink className="link__style" to="/categoria/objects">
             Objects
           </NavLink>
         </li>

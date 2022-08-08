@@ -14,11 +14,9 @@ export const ItemDetail = ({ data }) => {
   };
 
   return (
-    <div>
-      <div className="pokemon">
-        <p> {data.name}</p>
-        <img src={data.image} />
-      </div>
+    <div className="pokemon">
+      <p> {data.name}</p>
+      <img src={data.image} />
       {goToCart ? (
         <Link to="/cart">Ir al carrito</Link>
       ) : (

@@ -7,7 +7,7 @@ import ItemDetail from "../ItemDetail";
 // import masterball from "../../Recursos/masterball.png";
 // import pokeball from "../../Recursos/pokeball.png";
 // import pokedex from "../../Recursos/pokedex.png";
-import Title from "../Title/index";
+
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
@@ -22,12 +22,11 @@ export const ItemDetailContainer = ({ texto }) => {
   }, [detalleId]);
 
   return (
-    <>
-      <Title className="h1" titles={texto} />
-      <div className="container">
+    <div className="container">
+      <div>
         <ItemDetail data={data} />
       </div>
-    </>
+    </div>
   );
 };
 

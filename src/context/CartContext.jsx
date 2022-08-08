@@ -21,8 +21,6 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  console.log("carrito:", cart);
-
   const clearCart = () => setCart([]);
 
   const isInCart = (id) =>
