@@ -3,6 +3,7 @@ import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "../ItemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+
 import "./Cart.css";
 const Cart = () => {
   const { cart, totalPrice } = useCartContext();
@@ -32,8 +33,10 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <>
-        <p>No Hay Elementos en el Carrito</p>
-        <Link to="/">Ver nuestros Productos</Link>
+        <p className="noHayElementos">No Hay Elementos en el Carrito</p>
+        <Link className="noHayElementos__button" to="/">
+          Ver nuestros Productos
+        </Link>
       </>
     );
   }
@@ -44,7 +47,7 @@ const Cart = () => {
       ))}
       <div className="button__cart">
         <p>Total: {totalPrice()}</p>
-        <button onClick={handleClick}>Emitir Compra</button>
+        <button onClick={handleClick}> {} Emitir Compra</button>
       </div>
     </>
   );

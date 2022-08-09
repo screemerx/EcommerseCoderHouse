@@ -18,7 +18,9 @@ export const ItemDetail = ({ data }) => {
       <p> {data.name}</p>
       <img src={data.image} />
       {goToCart ? (
-        <Link to="/cart">Ir al carrito</Link>
+        <Link className="button__irCarrito" to="/cart">
+          Ir al carrito
+        </Link>
       ) : (
         <ItemCount initial={1} stock={10} onAdd={onAdd} />
       )}

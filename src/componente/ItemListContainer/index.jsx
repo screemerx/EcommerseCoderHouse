@@ -58,9 +58,16 @@ export const ItemLisContainer = ({ texto }) => {
     }
   }, [categoriaId]);
 
+  if (fondo.length === 0) {
+    return (
+      <>
+        <p></p>
+      </>
+    );
+  }
   return (
     <div>
-      <Inicio fondo={fondo.fondo} />
+      <Inicio fondo={fondo[0].fondo} />
       <div className="container__general">
         <Title className="h1" titles={texto} />
         <div className="container">

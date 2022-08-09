@@ -14,3 +14,15 @@
   font-size: 2rem;
   text-align: center;
 }
+
+.button__irCarrito {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #e7a76c;
+  border: solid #1e2b2d;
+  font-size: 1.5rem;
+  background-color: #1e2b2d;
+  border-radius: 8px;
+  padding: 1.5rem;
+}

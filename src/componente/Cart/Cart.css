@@ -5,3 +5,26 @@
 .button__cart button {
   font-size: 2rem;
 }
+
+.noHayElementos {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding-top: 5rem;
+}
+
+.noHayElementos__button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #e7a76c;
+  border: solid #1e2b2d;
+  font-size: 1.5rem;
+  background-color: #1e2b2d;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.button__cart button:hover {
+  background-color: #919a9c;
+}

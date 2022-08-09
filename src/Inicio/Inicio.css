@@ -1,10 +1,9 @@
 .fondo {
-  /* background-image: url(../Recursos/charizard.png),
-    linear-gradient(
-      0deg,
-      rgba(217, 194, 171, 1) 0%,
-      rgba(225, 217, 212, 1) 100%
-    ); */
+  background: linear-gradient(
+    0deg,
+    rgba(217, 194, 171, 1) 0%,
+    rgba(225, 217, 212, 1) 100%
+  );
   width: 100vw;
   height: 100vh;
   background-position: center;
